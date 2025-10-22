@@ -1,0 +1,8 @@
+cout "bird"
+Text mnogo 
+Cow's milk 
+camera is ready
+kakoyto text
+for example
+cpp program
+program cpp

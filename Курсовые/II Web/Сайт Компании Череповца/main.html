@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+	<title>Компании Череповца</title>
+	<link rel='stylesheet' href='style.css'>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500;600;700&family=Noto+Serif&family=Russo+One&display=swap" rel="stylesheet">
+	
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script>
+    $(function() {
+      var pages = [
+        {label: "ФосАгро", value: "phosagro.html"},
+        {label: "Смайлинг", value: "smailing.html"},
+        {label: "Северсталь", value: "severstal.html"},
+		{label: "Megapack", value: "megapack.html"},
+		{label: "Череповецкий фанерно-мебельный комбинат", value: "chfmk.html"}
+      ];
+      $("#search").autocomplete({
+        source: pages,
+        select: function(event, ui) {
+          window.location.href = ui.item.value;
+        }
+      });
+      $("#search-form").on("submit", function(event) {
+        event.preventDefault();
+        var searchText = $("#search").val().toUpperCase();
+        var selectedPage = $.grep(pages, function(page) {
+		return page.label.toUpperCase() === searchText;
+        });
+        if (selectedPage.length > 0) {
+          window.location.href = selectedPage[0].value;
+        } else {
+          alert("Название компании введено не верно");
+        }
+      });
+    });
+	</script>
+</head>
+
+<body>
+	<div class='header'>
+	<div class='header-logo'>
+		<a href="main.html">
+			<img src="images/CHlogo.png" height="80" alt="Логотип сайта">
+		</a>
+	</div>	
+	<div class='name'>
+		<a href="main.html">Компании Череповца</a>
+	</div>
+	<ul>
+		<li><a href="map.html"><img src="images/line.png" alt="">Карта<br>сайта</a></li>
+		<li><a href="contact.html"><img src="images/line.png" alt="">Контакты</a></li>
+	</ul>
+	</div>
+
+	<div class='title'>О чём данный сайт?</div>
+	<a style="position: absolute; text-align: left; width: 50%; left: 50%; transform: translate(-50%, 30%); font-size: 35px;">ЧК ("Черпеповецкие компании") &mdash; сайт, который содержит информацию о компаниях, основанных в городе Череповец.</a>
+
+	<form id="search-form">
+		<input type="text" id="search" placeholder="Компания называется...">
+		<button type="submit" class='submit-img'>
+			<img src="images/search.png" height="30" alt="Искать" />
+		</button>
+	</form>
+	
+	<div class='button'>
+		<a href="company.html">Перейти к списку компаний</a>
+	</div>
+
+	
+</body>
+</html>

@@ -1,0 +1,27 @@
+"Parent Relationship Parent to Child Rule","Parent Relationship Child to Parent Rule","Parent Entity Name","Attribute Is FK"
+,,,No
+,,,No
+,,,No
+,,,No
+,,,No
+"A Поставщики обеспечивают at least one Поставки.","A Поставки осуществляет exactly one Поставщики.",Поставщики,No
+"A Продукты входят в at least one Поставки.","A Поставки содержит exactly one Продукты.",Продукты,Yes
+,,,Yes
+,,,No
+,,,No
+"A Города имеют exactly 1 Поставщикиs.","A Поставщики работает в exactly one Города.",Города,No
+,,,Yes
+,,,No
+,,,No
+,,,No
+,,,No
+"A Блюда имеет exactly 1 Расходs.","A Расход зависит от exactly one Блюда.",Блюда,No
+,,,Yes
+,,,No
+"A Блюда имеет exactly 1 Рецептыs.","A Рецепты определяет exactly one Блюда.",Блюда,Yes
+,,,No
+"A Блюда имеют exactly 1 Составs.","A Состав определяет exactly one Блюда.",Блюда,Yes
+"A Продукты входят в at least one Состав.","A Состав включает exactly one Продукты.",Продукты,Yes
+,,,No
+
+

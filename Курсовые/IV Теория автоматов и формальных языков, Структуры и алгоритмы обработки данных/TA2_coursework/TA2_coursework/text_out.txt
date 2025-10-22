@@ -1,0 +1,21 @@
+      1  #include <iostream>
+      2  #define _USE_MATH_DEFINES
+      3  #include <math.h>
+      4  using namespace std;
+      5  struct Person {
+      6  union Height {
+      7  int int_height;
+      8  size_t size_t_height;
+      9  double double_height;
+    10  } height = { -1 };
+    11  string name = "noname";
+    12  int age = -1;
+    13  };
+    14  int main() {
+    15  Person man;
+    16  cout << "Enter your name, age, height\nname\tage\theight" << endl;
+    17  cin >> man.name >> man.age >> man.height.double_height;
+    18  cout << "Hi " + man.name + ", " << man.age << " years old, " << man.height.double_height << " centimeters!" << endl;
+    19  system("pause");
+    20  return 0;
+    21  }

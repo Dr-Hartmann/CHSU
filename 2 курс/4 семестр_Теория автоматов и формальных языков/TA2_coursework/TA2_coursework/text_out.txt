@@ -1,0 +1,32 @@
+      1  #include <iostream>
+      2  #define _USE_MATH_DEFINES
+      3  #include <math.h>
+      4  using namespace std;
+      5  union Height {
+      6  int int_height;
+      7  size_t size_t_height;
+      8  double double_height;
+      9  } height;
+    10  struct Person {
+    11  union Height {
+    12  int int_height;
+    13  size_t size_t_height;
+    14  double double_height;
+    15  } height = { -1 };
+    16  string name = "noname";
+    17  int age = -1;
+    18  };
+    19  int main() {
+    20  Person man;
+    21  cout << "Enter your name, age, height\nname\tage\theight" << endl;
+    22  cin >> man.name >> man.age >> man.height.double_height;
+    23  if (man.age >= 18)
+    24  man.age &= man.age xor man.height.int_height;
+    25  else if (man.height.double_height > 150)
+    26  man.height.int_height = sqrt(--man.height.double_height);
+    27  else
+    28  (man.age > 100)  ? man.age %= 2 : man.age |= man.age;
+    29  cout << "Hi " + man.name + ", " << man.age << " years old, " << man.height.int_height << " centimeters!" << endl;
+    30  system("pause");
+    31  return 0;
+    32  }

@@ -1,0 +1,5 @@
+C:\Users\Повелитель\Desktop\Feistel\x64\Release\Feistel.vcxproj.AssemblyReference.cache
+C:\Users\Повелитель\Desktop\Feistel\x64\Release\Feistel.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\Повелитель\Desktop\Feistel\x64\Release\Feistel.MyForm1.resources
+C:\Users\Повелитель\Desktop\Feistel\x64\Release\Feistel.vcxproj.GenerateResource.cache
+C:\Users\Повелитель\Desktop\Feistel\x64\Release\Feistel.exe
