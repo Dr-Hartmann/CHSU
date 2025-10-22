@@ -1,0 +1,47 @@
+.theme-matrix {
+    --matrix-green: #00ff41;
+    --matrix-glow: rgba(0, 255, 65, 0.35);
+
+    --lumo-base-color: #000;
+    --lumo-primary-text-color: var(--matrix-green);
+    --lumo-primary-color: var(--matrix-glow);
+
+    /* --button-bg-hover: #007700; */
+    --button-color: var(--matrix-green);
+
+    --input-bg: rgba(0, 20, 0, 0.85);
+    --input-color: var(--matrix-green);
+    --input-border: var(--matrix-green);
+
+    --glass-bg: rgba(0, 30, 0, 0.4);
+    --glass-border: rgba(0, 255, 65, 0.2);
+
+    --drawer-bg: linear-gradient(180deg, #0b1020, #0a0d14);
+    --drawer-border: rgba(0, 255, 65, 0.2);
+
+    --grid-header-bg: linear-gradient(180deg, rgba(123, 97, 255, 0.25), rgba(0, 255, 240, 0.15));
+}
+
+.theme-matrix .matrix-title, h1,
+.theme-matrix .matrix-subtitle {
+    color: var(--matrix-green);
+    text-shadow: 0 0 8px var(--matrix-green), 0 0 18px var(--matrix-glow);
+}
+
+.theme-matrix vaadin-icon.matrix-logo {
+    color: var(--matrix-green) !important;
+    filter: drop-shadow(0 0 6px var(--matrix-green)) drop-shadow(0 0 12px var(--matrix-glow));
+}
+
+.theme-matrix vaadin-sidenav-item::part(selected) {
+  background: rgba(0, 255, 65, 0.15); /* лёгкий зеленый glow вместо серого */
+  color: var(--matrix-green);
+  box-shadow: 0 0 8px var(--matrix-glow);
+}
+
+.theme-matrix vaadin-button[theme~="secondary"]::part(native-button) {
+  color: var(--matrix-green);
+  border: 1px solid var(--matrix-green);
+  background: rgba(0,0,0,0.3); /* полупрозрачный черный */
+  box-shadow: 0 0 8px var(--matrix-glow);
+}

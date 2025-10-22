@@ -1,0 +1,60 @@
+# Общие настройки производительности для Spring Boot
+server:
+  undertow:
+    # Настройки для улучшения производительности
+    threads:
+      io: 4
+      worker: 200
+    buffer-size: 1024
+    direct-buffers: true
+
+spring:
+  jackson:
+    # Оптимизация сериализации/десериализации JSON
+    serialization:
+      write-dates-as-timestamps: false
+    deserialization:
+      fail-on-unknown-properties: false
+  
+  datasource:
+    # Настройки пула соединений для производительности
+    # Пароль читается из файла через SecurePasswordConfig
+    password: "${DB_PASSWORD_FILE:#{dbPassword}}" # Используем bean из конфигурации
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      validation-timeout: 5000
+      leak-detection-threshold: 60000
+
+  jpa:
+    # Настройки JPA для производительности
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 25
+        order_inserts: true
+        order_updates: true
+        batch_versioned_data: true
+        generate_statistics: false
+    open-in-view: false
+
+# Настройки для конфигурации безопасного чтения паролей
+app:
+  db:
+    password:
+      file: ${DB_PASSWORD_FILE}
+  admin:
+    password:
+      file: ${DEFAULT_PASSWORD_FILE}
+
+# Логирование
+logging:
+  level:
+    com.miku: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.hibernate.SQL: WARN
+    org.hibernate.type.descriptor.sql.BasicBinder: WARN

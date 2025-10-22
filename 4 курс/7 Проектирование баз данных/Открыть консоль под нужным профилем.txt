@@ -1,0 +1,5 @@
+docker exec -it oracle-xe-11g /bin/bash -c "`
+export ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe; `
+export ORACLE_SID=XE; `
+export NLS_LANG=RUSSIAN_RUSSIA.AL32UTF8; `
+/u01/app/oracle/product/11.2.0/xe/bin/sqlplus STUDENT/root"

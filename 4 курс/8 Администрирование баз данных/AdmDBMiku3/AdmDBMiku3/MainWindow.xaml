@@ -1,0 +1,53 @@
+﻿<mah:MetroWindow x:Class="AdmDBMiku3.MainWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:local="clr-namespace:AdmDBMiku3"
+                  xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                  mc:Ignorable="d"
+                  Title="Микуцких_Г.А._АдмПрБД3_OracleDatabase"
+                  MinHeight="500" MinWidth="800"
+                  Height="500" Width="800"
+                  WindowStartupLocation="CenterScreen">
+    <Grid Margin="5, 5, 5, 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <UniformGrid Grid.Row="0" Rows="1" HorizontalAlignment="Left" Margin="0,0,0,5">
+            <TextBox x:Name="HostTextBox"       mah:TextBoxHelper.Watermark="Хост-адрес"    HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="PortTextBox"       mah:TextBoxHelper.Watermark="Порт"          HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="ServiceTextBox"    mah:TextBoxHelper.Watermark="Сервис"        HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="SchemaTextBox"     mah:TextBoxHelper.Watermark="Имя пользователя" HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="PasswordTextBox"   mah:TextBoxHelper.Watermark="Пароль"        HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="TableTextBox"      mah:TextBoxHelper.Watermark="Таблица/VIEW"  HorizontalContentAlignment="Center"/>
+        </UniformGrid>
+
+        <UniformGrid Grid.Row="1" Columns="2" Margin="0,0,0,5">
+            <Button Content="Тест подключения" Click="TestConnection_Click"/>
+            <Button Content="Обновить данные" Click="UpdateTable_Click"/>
+        </UniformGrid>
+
+        <DataGrid
+            Grid.Row="2"
+            x:Name="TableDataGrid" d:ItemsSource="{d:SampleData ItemCount=5}"
+            AlternatingRowBackground="AntiqueWhite"
+            AutoGenerateColumns="True"
+            AutoGeneratingColumn="TableDataGrid_AutoGeneratingColumn"
+            CanUserReorderColumns="True"
+            CanUserResizeColumns="True"
+            CanUserSortColumns="True"
+            CanUserAddRows="False"
+            IsReadOnly="True"
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Stretch"/>
+
+        <Border Grid.Row="3" BorderBrush="LightGray" BorderThickness="0,1,0,0">
+            <TextBlock x:Name="StatusTextBlock" Text="Готов" Foreground="Gray" HorizontalAlignment="Left"/>
+        </Border>
+    </Grid>
+</mah:MetroWindow>

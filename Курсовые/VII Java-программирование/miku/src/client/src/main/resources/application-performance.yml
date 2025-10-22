@@ -1,0 +1,35 @@
+# Настройки производительности для Vaadin
+vaadin:
+  # Оптимизация загрузки ресурсов
+  frontend:
+    hotdeploy: false
+  # Оптимизация UI
+  compatibilityMode: false
+  heartbeatInterval: 30
+  maxMessageSuspendTimeout: 5000
+  push:
+    mode: disabled
+  router:
+    # Отключение отладочной информации в продакшене
+    debug: false
+
+# Общие настройки производительности
+server:
+  compression:
+    enabled: true
+    mime-types: text/html,text/plain,text/css,application/javascript,application/json
+    min-response-size: 1024
+
+spring:
+  servlet:
+    multipart:
+      # Оптимизация загрузки файлов
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+# Логирование
+logging:
+  level:
+    com.vaadin: INFO
+    com.miku: INFO
+    org.springframework.web: INFO

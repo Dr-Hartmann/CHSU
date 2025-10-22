@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.miku</groupId>
+    <artifactId>miku</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>Курсовая работа 7 семестр</name>
+    <description>Родительский проект</description>
+
+    <modules>
+        <module>common</module>
+        <module>server</module>
+        <module>client</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>25</maven.compiler.release>
+        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
+        <vaadin.version>25.0.2</vaadin.version>
+        <spring-boot-maven-plugin.version>4.0.1</spring-boot-maven-plugin.version>
+        <mapstruct.version>1.6.3</mapstruct.version>
+        <springdoc.version>3.0.0</springdoc.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>4.0.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot-maven-plugin.version}</version>
+                <configuration>
+                    <layers>
+                        <enabled>true</enabled>
+                    </layers>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

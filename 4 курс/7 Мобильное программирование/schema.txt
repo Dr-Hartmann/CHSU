@@ -1,0 +1,104 @@
+Table Users {
+  UserId integer [primary key]
+  Login varchar(20) [not null]
+  HashPassword varchar(256) [not null]
+  FullName varchar(50)
+  IsActive bool [not null]
+  LastSyncData timestamp [not null]
+  CreatedAt timestamp [not null]
+}
+
+Table UserSettings{
+  UserSettingId integer [primary key]
+  UserId integer [not null]
+  Settings byte[]
+}
+
+ref: Users.UserId - UserSettings.UserId
+
+Table Achievements{
+  AchievementId integer [primary key]
+  Name varchar(100) [not null]
+}
+
+Table UserAchievements{
+  UserAchievementId integer [primary key]
+  AchievementId integer [not null]
+  UserId integer [not null]
+  СreatedAt timestamp
+}
+
+ref: Achievements.AchievementId < UserAchievements.AchievementId
+ref: Users.UserId < UserAchievements.UserId
+
+Table Workouts {
+  WorkoutId integer [primary key]
+  UserId integer [not null]
+  Duration integer [not null]
+  СreatedAt timestamp [not null]
+}
+
+Ref: Workouts.UserId > Users.UserId
+
+Table ExerciseLogs {
+  ExerciseId integer [primary key]
+  TypesExercisesId integer [not null]
+  WorkoutId integer [not null]
+  SetLog byte[]
+} 
+
+Ref: ExerciseLogs.TypesExercisesId > TypesExercises.TypesExercisesId
+Ref: ExerciseLogs.WorkoutId >  Workouts.WorkoutId
+
+Table TypesExercises {
+  TypesExercisesId integer [primary key]
+  MuscleGroupId integer
+  Name varchar(100) [not null]
+}
+
+Table PersonalRecordSets {
+  PersonalRecordsId integer [primary key]
+  ExerciseId integer [not null]
+  RecordSetLog byte[] [not null]
+}
+
+Ref: PersonalRecordSets.ExerciseId > ExerciseLogs.ExerciseId
+
+Table WorkoutPatterns{
+  WorkoutPatternId integer [primary key]
+  Name varchar(100) [not null]
+}
+
+Table ExercisesForPatterns{
+  ExercisesForPatternId integer [primary key]
+  WorkoutPatternId integer [not null]
+  TypesExercisesId integer [not null]
+  SetPattern byte[]
+}
+
+Ref: ExercisesForPatterns.TypesExercisesId > TypesExercises.TypesExercisesId
+Ref: ExercisesForPatterns.WorkoutPatternId > WorkoutPatterns.WorkoutPatternId
+
+Table BodyInfo{
+  BodyInfoId integer [primary key]
+  UserId integer [not null]
+  СreatedAt timestamp [not null]
+  BodyWeight float [not null]
+  BodyFat float
+  Chest integer
+  Waist integer
+  Size integer
+  LeftBiceps integer
+  RightBiceps integer
+  LeftHip integer
+  RightHip integer
+}
+
+ref: BodyInfo.UserId > Users.UserId
+
+Table MuscleGroups{
+  MuscleGroupId integer [primary key]
+  Name varchar(50) [not null]
+}
+
+ref: MuscleGroups.MuscleGroupId < TypesExercises.MuscleGroupId

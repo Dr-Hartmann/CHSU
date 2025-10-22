@@ -1,0 +1,31 @@
+package com.client;
+
+import com.vaadin.flow.component.page.ColorScheme;
+import com.vaadin.flow.component.page.Push;
+import com.vaadin.flow.theme.lumo.Lumo;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.vaadin.flow.component.dependency.StyleSheet;
+import com.vaadin.flow.component.page.AppShellConfigurator;
+import org.springframework.boot.hibernate.autoconfigure.HibernateJpaAutoConfiguration;
+import org.springframework.boot.jdbc.autoconfigure.DataSourceAutoConfiguration;
+import org.springframework.boot.jdbc.autoconfigure.DataSourceTransactionManagerAutoConfiguration;
+
+@SpringBootApplication(exclude = {
+        DataSourceAutoConfiguration.class,
+        DataSourceTransactionManagerAutoConfiguration.class,
+        HibernateJpaAutoConfiguration.class
+})
+@Push
+@StyleSheet(Lumo.STYLESHEET)
+@StyleSheet(Lumo.UTILITY_STYLESHEET)
+@StyleSheet("styles.css")
+@ColorScheme(ColorScheme.Value.LIGHT_DARK)
+public class Application implements AppShellConfigurator {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+
+}

@@ -1,0 +1,27 @@
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--lumo-base-color);
+  color: var(--lumo-primary-text-color);
+  font-family: var(--lumo-font-family, "Segoe UI", sans-serif);
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.cyber-glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--aura-border-radius-m);
+}
+
+.terminal-cursor::after {
+  content: "_";
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

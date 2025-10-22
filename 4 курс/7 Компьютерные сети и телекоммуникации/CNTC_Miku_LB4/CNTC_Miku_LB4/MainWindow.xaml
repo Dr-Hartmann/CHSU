@@ -1,0 +1,32 @@
+﻿<Window x:Class="CNTCMikuLB4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CNTCMikuLB4"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        MinHeight="400"
+        MinWidth="300">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <UniformGrid Grid.Row="0" Rows="1" Columns="2" Margin="0,0,0,10">
+            <Button Content="Проверить соединение" Click="Check"/>
+            <Button Content="Очистить" Click="Clear"/>
+        </UniformGrid>
+
+        <TextBox Grid.Row="1" x:Name="HostnameTextBox"
+                 VerticalContentAlignment="Center"
+                 HorizontalContentAlignment="Center"
+                 Text="www.chsu.ru"/>
+
+        <TextBox Grid.Row="2" x:Name="ResultsTextBox"
+                 IsEnabled="False"
+                 TextWrapping="Wrap"
+                 Margin="0,10,0,0"/>
+    </Grid>
+</Window>

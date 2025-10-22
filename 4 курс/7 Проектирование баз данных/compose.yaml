@@ -1,0 +1,20 @@
+services:
+  oracle-db:
+    image: wnameless/oracle-xe-11g-r2    
+    container_name: oracle-xe-11g
+    ports:
+      # Oracle Listener - основной порт БД
+      - "9900:1521"
+      # Oracle APEX / HTTP-интерфейс
+      - "8800:8080"
+      
+    volumes:
+      # Именованный том 'oracledata' монтируется в папку данных Oracle в контейнере 
+      - oracledata:/u01/app/oracle
+      
+    restart: unless-stopped
+
+volumes:
+  oracledata:
+    # Позволяет Docker создать и управлять этим томом для сохранения данных БД
+    external: false

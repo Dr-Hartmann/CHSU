@@ -1,0 +1,37 @@
+## Visual Studio
+.vs/
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+## ASP.NET Core
+ASPNETCORE_ENVIRONMENT
+appsettings.Development.json
+appsettings.Local.json
+/publish/
+MVPv5.API/wwwroot/swagger/
+MVPv5.API/wwwroot/swagger-ui/
+/MVPv5.Client/wwwroot/
+
+## Node.js (если используешь CSS/JS сборщики)
+node_modules/
+npm-debug.log*
+
+## Rider / JetBrains
+.idea/
+*.sln.iml
+
+## OS
+.DS_Store
+Thumbs.db

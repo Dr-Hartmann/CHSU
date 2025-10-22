@@ -1,0 +1,54 @@
+﻿<mah:MetroWindow x:Class="MikuDbLab3.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:local="clr-namespace:MikuDbLab3"
+                 mc:Ignorable="d"
+                 Title="МикуцкихБДЛаб3"
+                 MinHeight="600" MinWidth="800"
+                 Height="600" Width="800"
+                 WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <UniformGrid Grid.Row="0" Rows="1" HorizontalAlignment="Left" Margin="0,0,0,5">
+            <TextBox x:Name="HostTextBox" Text="localhost" mah:TextBoxHelper.Watermark="Хост-адрес" HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="PortTextBox" Text="9900" mah:TextBoxHelper.Watermark="Порт" HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="ServiceTextBox" Text="XE" mah:TextBoxHelper.Watermark="Сервис" HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="SchemaTextBox" Text="STUDENT" mah:TextBoxHelper.Watermark="Имя схемы" HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="PasswordTextBox" Text="root" mah:TextBoxHelper.Watermark="Пароль" HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="TableTextBox" Text="LAB3" mah:TextBoxHelper.Watermark="Таблица" HorizontalContentAlignment="Center"/>
+        </UniformGrid>
+
+        <UniformGrid Grid.Row="1" Columns="3" Margin="0,0,0,5">
+            <Button Name="ReName" Content="Переим. «Энгельса» на «Милютина»" Click="ReName_Click"/>
+            <Button Name="ReverseReName" Content="Переим. «Милютина» на «Энгельса»" Click="ReverseReName_Click"/>
+
+            <UniformGrid Columns="1" HorizontalAlignment="Right">
+                <Button Content="Обновить данные" Click="Button_Click"/>
+            </UniformGrid>
+        </UniformGrid>
+
+        <UniformGrid Grid.Row="2" Columns="3" Margin="0,0,0,5">
+            <Button Name="LotteryButton" Content="Провести лотерею" Click="Lottery_Click"/>
+            <Button Name="DropLottery" Content="Обнулить стипендии" Click="DropLottery_Click"/>
+        </UniformGrid>
+
+        <DataGrid Grid.Row="4"
+                  x:Name="TableDataGrid" d:ItemsSource="{d:SampleData ItemCount=5}"
+                  AlternatingRowBackground="LightGray"
+                  AutoGenerateColumns="True"
+                  AutoGeneratingColumn="TableDataGrid_AutoGeneratingColumn"
+                  CanUserReorderColumns="False"
+                  IsReadOnly="True"
+                  VerticalAlignment="Stretch"
+                  HorizontalAlignment="Stretch"/>
+    </Grid>
+</mah:MetroWindow>

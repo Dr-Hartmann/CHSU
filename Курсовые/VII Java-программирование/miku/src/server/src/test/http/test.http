@@ -1,0 +1,13 @@
+### Запрос на создание пользователя
+POST http://localhost:8080/users
+Content-type: application/json
+
+{
+  "name": "JohnDoe"
+}
+
+### Запрос информации о пользователе
+GET http://localhost:8080/users/JohnDoe
+
+### Запрос на удаление пользователя
+DELETE http://localhost:8080/users/JohnDoe

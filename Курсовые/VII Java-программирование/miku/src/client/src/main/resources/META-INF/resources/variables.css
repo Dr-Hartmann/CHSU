@@ -1,0 +1,40 @@
+:root {
+    --lumo-base-color: #f8f9fa;
+    --lumo-primary-text-color: #222;
+    --lumo-primary-color: #00a6ff;
+    --lumo-primary-color-50pct: rgba(76, 0, 255, 0.5);
+    --lumo-error-color: #ff3860;
+    --lumo-error-color-50pct: rgba(255, 56, 96, 0.5);
+
+    --lumo-body-text-color: var(--lumo-primary-text-color);
+    --lumo-secondary-text-color: var(--lumo-primary-color);
+
+    --lumo-header-text-color: var(--lumo-primary-text-color);
+
+    --aura-border-radius-m: 10px;
+    --aura-border-radius-l: 14px;
+
+    /* кнопки */
+    --button-bg: var(--lumo-primary-color);
+    --button-bg-hover: var(--lumo-primary-color);
+    --button-color: #001818;
+
+    /* поля ввода */
+    --input-bg: #fff;
+    --input-color: var(--lumo-primary-text-color);
+    --input-border: rgba(138, 164, 255, 0.35);
+
+    /* drawer */
+    --drawer-bg: var(--lumo-base-color);
+    --drawer-border: rgba(0, 0, 0, 0.12);
+
+    /* стекло / glass */
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-shadow: 0 0 12px var(--lumo-primary-color);
+
+    /* grid */
+    --grid-header-bg: transparent;
+    --grid-header-color: var(--lumo-primary-text-color);
+    --grid-row-hover-bg: rgba(0, 255, 240, 0.05);
+}

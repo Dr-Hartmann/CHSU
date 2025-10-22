@@ -1,0 +1,23 @@
+# Исключаем файлы с чувствительными данными
+secrets/
+*.password
+*.secret
+*.key
+
+# Исключаем конфигурационные файлы с паролями
+.env
+
+# Временные файлы
+target/
+*.tmp
+*.temp
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

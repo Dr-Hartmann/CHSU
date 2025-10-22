@@ -1,0 +1,39 @@
+/* Кнопки */
+vaadin-button::part(native-button) {
+  border-radius: var(--aura-border-radius-l);
+  background: var(--button-bg);
+  color: var(--button-color);
+  font-weight: 600;
+  box-shadow: var(--glass-shadow);
+  cursor: pointer;
+}
+
+vaadin-button::part(native-button):hover {
+  background: var(--button-bg-hover);
+}
+
+/* Поля ввода */
+vaadin-text-field::part(input-field),
+vaadin-number-field::part(input-field),
+vaadin-combo-box::part(input-field) {
+  background: var(--input-bg);
+  color: var(--input-color);
+  border: 1px solid var(--input-border);
+  border-radius: var(--aura-border-radius-m);
+}
+
+/* Layout */
+vaadin-app-layout::part(drawer) {
+  background: var(--drawer-bg);
+  border-right: 1px solid var(--drawer-border);
+}
+
+/* Таблицы */
+vaadin-grid::part(header-cell) {
+  background: var(--grid-header-bg);
+  color: var(--grid-header-color);
+}
+
+vaadin-grid::part(row):hover {
+  background: var(--grid-row-hover-bg);
+}

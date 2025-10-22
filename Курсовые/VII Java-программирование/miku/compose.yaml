@@ -1,0 +1,74 @@
+services:
+  client:
+    image: miku-java-7-client:${VERSION}-${CLIENT_PROFILE}
+    build:
+      context: ./src/
+      dockerfile: client/Dockerfile
+    restart: no
+    environment:
+      SERVER_HOST: server
+    ports:
+      - "${APP_CLIENT_PORT}:5050"
+    networks:
+      - miku
+    depends_on:
+      - server
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+
+  server:
+    image: miku-java-7-server:${VERSION}-${SERVER_PROFILE}
+    build:
+      context: ./src/
+      dockerfile: server/Dockerfile
+    restart: "no"
+    environment:
+      APP_DB_DRIVER: ${DB_DRIVER}
+      APP_DB_URL: ${DB_URL}
+      APP_DB_USER: ${DB_USER}
+      APP_DB_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "${APP_SERVER_PORT}:8080"
+    networks:
+      - miku
+    depends_on:
+      postgres:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+  postgres:
+    container_name: postgreSQL
+    extends:
+      service: postgres
+      file: services-postgres.yaml
+    networks:
+      - miku
+
+  pgAdmin:
+    container_name: pgAdmin
+    extends:
+      service: pgAdmin
+      file: services-postgres.yaml
+    networks:
+      - miku
+
+volumes:
+  pg-data:
+  pgadmin-data:
+
+networks:
+  miku:
+    driver: bridge

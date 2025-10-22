@@ -1,0 +1,29 @@
+SET VERIFY OFF
+SET FEEDBACK ON
+SET DEFINE ON
+
+UPDATE "students"
+SET
+	"GRADE" = NULL,
+	"BASEGRANT" = NULL,
+	"GRANT" = NULL
+;
+
+ACCEPT NEWBASEGRANT NUMBER PROMPT 'Введите значение базовой стипендии: '
+
+UPDATE "students"
+SET "GRADE" = ("math" + "info" + "forlan") / 3;
+
+UPDATE "students"
+SET "BASEGRANT" = &NEWBASEGRANT;
+
+UPDATE "students"
+SET	"GRANT" = CASE
+		WHEN "GRADE" >= 4.5 THEN &NEWBASEGRANT * 1.5
+		WHEN "GRADE" >= 3.5 AND "GRADE" < 4.5 THEN &NEWBASEGRANT * 1.25
+		WHEN "GRADE" >= 2.5 AND "GRADE" < 3.5 THEN &NEWBASEGRANT
+		ELSE 0
+	END
+;
+
+COMMIT;

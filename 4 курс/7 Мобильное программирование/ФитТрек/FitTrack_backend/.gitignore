@@ -1,0 +1,152 @@
+log.*
+schema.*
+
+# Общие системные файлы
+.DS_Store
+Thumbs.db
+*.db
+*.lnk
+
+# Visual Studio файлы
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.tt
+*.tts
+*.vs/
+*.vscode/
+.vs/
+_ReSharper.Caches/
+*.csproj.user
+*.resharper
+*.sln.iml
+
+# Rider файлы
+*.sln.dotnet
+riderModule.iml
+/.idea/
+*.dotCover
+*.sln.ide/
+
+# Бинарные файлы
+[Bb]in/
+[Oo]bj/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.config
+*.xml
+
+# Папки пакетов
+packages/
+[Nn]uget/
+*.nupkg
+*.snupkg
+
+# Файлы публикации
+publish/
+*.pubxml
+*.publishproj
+
+# Логи и временные файлы
+[Ll]og/
+[Ll]ogs/
+*.log
+*.tmp
+*.temp
+
+# Файлы настроек
+appsettings.Development.json
+appsettings.Local.json
+appsettings.Secrets.json
+*.secrets.json
+connectionstrings.*.json
+
+# Миграции Entity Framework (осторожно!)
+# Раскомментируйте если хотите исключить миграции из репозитория
+# Migrations/
+
+# Файлы тестирования
+*.testsettings
+*.testconfig
+TestResults/
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Файлы покрытия кода
+*.coverage
+*.coveragexml
+
+# Docker файлы
+.dockerignore
+Dockerfile
+docker-compose.*.yml
+
+# Azure файлы
+.azure/
+
+# Файлы веб-сайтов
+*.WebApplication
+
+# Файлы резервных копий
+*.backup
+*.bak
+
+# Файлы специфичные для macOS
+.DS_Store?
+
+# Файлы специфичные для Windows
+[Tt]humbs.db
+
+# Файлы специфичные для Linux
+*~
+
+# Файлы SSL сертификатов (для разработки)
+*.pfx
+*.p12
+localhost.pem
+localhost-key.pem
+
+# Файлы специфичные для Entity Framework
+Migrations/*.Designer.cs
+
+# Файлы специфичные для клиентских библиотек
+wwwroot/lib/
+
+# Файлы специфичные для пользовательских настроек
+*.userprefs
+
+# Файлы специфичные для анализа кода
+*.lastcodeanalysisresults
+
+# Файлы специфичные для производительности
+*.psess
+*.vsp
+*.vspx
+
+# Файлы специфичные для шаблонов
+[Tt]emplate/
+
+# Файлы специфичные для временных данных
+_ReSharper.*/
+*.rs.bak
+
+# Файлы специфичные для отладки
+*.dmp
+*.minidump
+
+# Файлы специфичные для кэша
+.cache/
+*.cache
+
+# Файлы специфичные для документации
+_gh_pages/
+docs/_site/
+
+# Файлы специфичные для бенчмаркинга
+[Bb]enchmark[Rr]esults/
+
+# Файлы специфичные для анализа зависимостей
+dependency-tree.html
