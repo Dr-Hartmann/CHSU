@@ -1,0 +1,65 @@
+﻿<Window x:Class="Stoma.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Stoma"
+        mc:Ignorable="d"
+        Title="Stoma - управление базой данных Access" Loaded="InitTableDefault" Width="1300" Height="790" Icon="/orig.jpg">
+    <Grid x:Name="All" Margin="10,10,10,10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="51*"/>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="347*"/>
+            <RowDefinition Height="319*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="1100*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox SelectionChanged="TablesDefault_SelectionChanged" x:Name="TablesDefault" Margin="0,3,5,5" RenderTransformOrigin="0.5,0.5" Grid.Row="2" SelectedIndex="0">
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListBox.RenderTransform>
+        </ListBox>
+        <DataGrid x:Name="Tables" FontSize="14" AutoGenerateColumns="False" Grid.Column="1" Margin="5,0,10,10" Grid.RowSpan="4"/>
+        <Grid Margin="0,0,5,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Add" Click="Add_Click" Grid.Column="0">
+                <Button.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="/plus.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Delete" Click="Delete_Click" Grid.Column="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="/rubbish.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Edit" Click="Edit_Click" Grid.Column="2">
+                <Button.Background>
+                    <ImageBrush ImageSource="/editing.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+        </Grid>
+        <Label Content="Запросы" HorizontalAlignment="Center" Width="60" Grid.Row="1" Margin="0,5,0,5"/>
+        <ListBox SelectionChanged="TablesDefault_SelectionChanged" x:Name="TablesSpecials" Margin="0,5,5,10" RenderTransformOrigin="1,1" Grid.Row="3" SelectedIndex="0">
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListBox.RenderTransform>
+        </ListBox>
+    </Grid>
+</Window>

@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\ClassLib\LibBarcode.csproj" />
+		<ProjectReference Include="..\Lab2_Lib\LibProduct.csproj" />
+		<ProjectReference Include="..\Lab3_Lib\LibShowcase.csproj" />
+	</ItemGroup>
+
+</Project>

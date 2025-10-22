@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="editing.png" />
+    <None Remove="orig.jpg" />
+    <None Remove="plus.png" />
+    <None Remove="rubbish.png" />
+    <None Remove="Снимок экрана 2025-06-20 094916.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.OleDb" Version="9.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="editing.png" />
+    <Resource Include="orig.jpg" />
+    <Resource Include="plus.png" />
+    <Resource Include="rubbish.png" />
+  </ItemGroup>
+
+</Project>

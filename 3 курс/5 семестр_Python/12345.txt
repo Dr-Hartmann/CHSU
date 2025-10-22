@@ -1,0 +1,2 @@
+Name: лада калина  Amount: 8844  Type: Car
+Name: волга  Amount: 3  Type: Car
