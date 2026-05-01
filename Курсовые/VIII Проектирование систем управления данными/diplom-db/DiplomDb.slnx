@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Diplom.DTO/Diplom.DTO.csproj" />
+  <Project Path="DiplomDb.API/DiplomDb.API.csproj" />
+  <Project Path="DiplomDB.DataAccess/DiplomDB.DataAccess.csproj" />
+  <Project Path="DiplomDb.Domain/DiplomDb.Domain.csproj" />
+</Solution>
