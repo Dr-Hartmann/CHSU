@@ -1,3 +1,14 @@
 {
-  "promptDelete": false
+  "promptDelete": false,
+  "showInlineTitle": false,
+  "foldHeading": true,
+  "readableLineLength": true,
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": true,
+  "pdfExportSettings": {
+    "pageSize": "A5",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
 }
